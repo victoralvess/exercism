@@ -15,3 +15,4 @@ do {
 }
 
 print("Total: $\(customer.buy())")
+print("Total (Empty Cart): $\(customer.buy())")
