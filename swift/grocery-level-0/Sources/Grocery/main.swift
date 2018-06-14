@@ -4,9 +4,14 @@ var outOfStock = Product("Out of Stock", 100_000_000)
 
 var customer = Customer()
 
-customer.addToCart(egg)
-customer.addToCart(egg)
-customer.addToCart(egg)
-customer.addToCart(milk)
+do {
+    try customer.addToCart(egg)
+    try customer.addToCart(egg)
+    try customer.addToCart(egg)
+    try customer.addToCart(milk)
+    try customer.addToCart(outOfStock)
+} catch GroceryError.outOfStock(let product) {
+    print("`\(product.name)` is out of stock!")
+}
 
 print("Total: $\(customer.buy())")
