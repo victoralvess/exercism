@@ -6,7 +6,7 @@ class Customer {
     }
 
     func addToCart(_ product: Product) {
-        Product.inStock -= 1
+        product.inStock -= 1
         cart.append(product)
     }
 
