@@ -2,11 +2,11 @@ class Customer {
     var cart: [Product]
 
     init() {
-        self.cart = [Product]()
+        self.cart = [Product]()        
     }
 
     func addToCart(_ product: Product) throws {
-        guard product.inStock > 0 else {
+        guard product.inStock.isAvailable() else {
             throw GroceryError.outOfStock(product: product)
         }
         
